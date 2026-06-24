@@ -7,7 +7,7 @@ const input = process.argv[2];
 const jsonOnly = process.argv.includes('--json');
 
 if (!input) {
-  console.error('Usage: node tools/x-read-post.mjs <x/twitter status url or id> [--json]');
+  console.error('Usage: node skill/x-post-research/scripts/x-read-post.mjs <x/twitter status url or id> [--json]');
   process.exit(2);
 }
 

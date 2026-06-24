@@ -4,6 +4,14 @@
   "private": false,
   "type": "module",
   "description": "A Chinese-first Agent Skill for reading and summarizing X/Twitter posts with public endpoint and Chrome CDP fallbacks.",
+  "homepage": "https://github.com/anho123456/x-post-research-skill",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anho123456/x-post-research-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anho123456/x-post-research-skill/issues"
+  },
   "scripts": {
     "test": "node --check skill/x-post-research/scripts/x-read-post.mjs"
   },

@@ -2,9 +2,27 @@
 
 中文为主，English below key sections.
 
-一个通用 Agent Skill：读取、核查并总结 X/Twitter 帖子。它不只适合 Codex，也适合 Claude Code、Hermes、Gemini CLI、Cursor、Windsurf 等支持 `SKILL.md` 或类似 skill 机制的智能体。
+一个通用 Agent Skill：让智能体读懂、核查并总结 X/Twitter 帖子。
+
+它不只适合 Codex，也适合 Claude Code、Hermes、Gemini CLI、Cursor、Windsurf 等支持 `SKILL.md` 或类似 skill 机制的智能体。
 
 A general-purpose Agent Skill for reading, verifying, and summarizing X/Twitter posts. It is designed for Codex, Claude Code, Hermes, Gemini CLI, Cursor, Windsurf, and other agents that can learn from a `SKILL.md` workflow.
+
+## 一句话介绍
+
+把一条 X/Twitter 链接丢给智能体，它会尽量读取正文、配图、引用帖、评论区和外链，然后用中文告诉你：这条帖子到底在说什么、能不能实践、哪里需要继续核查。
+
+Give an agent an X/Twitter URL. The skill helps it inspect the post, media, quotes, replies, and links, then return a practical Chinese-first research note.
+
+## 30 秒开始
+
+```bash
+git clone https://github.com/anho123456/x-post-research-skill.git
+cd x-post-research-skill
+node skill/x-post-research/scripts/x-read-post.mjs "https://x.com/user/status/1234567890" --json
+```
+
+如果你只是想让智能体学习这个能力，把 `skill/x-post-research` 复制到你的 agent skills 目录即可。
 
 ## 适合谁
 
@@ -31,6 +49,17 @@ Good for users who want an agent to inspect X/Twitter posts, including images, q
 如果公开接口失败，它会尝试读取你已经登录的 Chrome 页面，所以适合处理 X 经常限制未登录访问的问题。
 
 The script tries public endpoints first, then falls back to your local Chrome DevTools/CDP session when available.
+
+## 示例输出方向
+
+这个 skill 不追求只给一句摘要，而是鼓励智能体输出可行动的研究结果：
+
+- 这条帖子主要讲什么
+- 帖子里提到的工具、Skill、MCP、API 或服务是什么
+- 能不能安装或实践
+- 是否需要登录、API Key、付费或特定环境
+- 哪些信息已经核查，哪些只是帖子作者的说法
+- 新手下一步应该怎么试
 
 ## 通用安装方式
 
@@ -156,6 +185,18 @@ Recommended prompt:
 Read this X/Twitter post. Inspect the text, images, replies, and external links. Tell me the main point, whether the mentioned tool can be installed or used, whether it needs an API key or payment, and give me practical next steps.
 ```
 
+## 宣传与分享
+
+如果你想介绍这个项目，可以直接使用仓库里的 [PROMOTION.md](PROMOTION.md)。里面包含：
+
+- X/Twitter 中文短帖
+- X/Twitter 中英双语帖
+- 小红书/公众号风格文案
+- GitHub 项目简介
+- 新手向标题
+
+你也可以给仓库点 Star，或把它 Fork 成自己的 Agent Skill 学习模板。
+
 ## 常见问题
 
 ### 为什么要 `--remote-allow-origins=*`？
@@ -192,6 +233,17 @@ Some posts may fail because they are deleted, private, login-gated, rate-limited
 5. 开源分享，让别人能复现和继续改进。
 
 This repository teaches a practical pattern: solve a real problem, turn the solution into a script, wrap it as a reusable Agent Skill, document it clearly, and share it for others to improve.
+
+## Star、Fork 和收益说明
+
+GitHub 不会因为下载、Star 或 Fork 直接给作者钱。它更像一个公开作品集：
+
+- Star：说明项目被别人认可。
+- Fork：说明别人想基于它学习或改进。
+- Issue/PR：帮助项目变得更好。
+- 影响力：未来做教程、社群、咨询、定制工具时，会变成信用资产。
+
+如果你想支持作者，可以通过 GitHub Sponsors、爱发电、Buy Me a Coffee、微信赞赏码等方式自行扩展。
 
 ## 许可证 / License
 

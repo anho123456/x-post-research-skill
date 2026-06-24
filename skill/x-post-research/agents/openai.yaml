@@ -1,4 +1,4 @@
 interface:
   display_name: "X Post Research"
-  short_description: "中文优先读取和分析 X/Twitter 帖子。Read X/Twitter posts with fallbacks."
-  default_prompt: "读一下这条 X/Twitter 帖，正文、配图、评论区和外链都要看，中文总结主要内容和实践步骤。"
+  short_description: "中文优先读取、核查和总结 X/Twitter 帖子。"
+  default_prompt: "读一下这条 X/Twitter 帖。正文、配图、引用帖、评论区和外链都要看；中文总结主要内容、可实践步骤、风险和需要继续核查的地方。"

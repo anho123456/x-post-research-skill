@@ -1,0 +1,22 @@
+{
+  "name": "x-post-research-skill",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "A Chinese-first Agent Skill for reading and summarizing X/Twitter posts with public endpoint and Chrome CDP fallbacks.",
+  "scripts": {
+    "test": "node --check skill/x-post-research/scripts/x-read-post.mjs"
+  },
+  "keywords": [
+    "codex",
+    "claude",
+    "hermes",
+    "gemini-cli",
+    "agent-skill",
+    "skill",
+    "twitter",
+    "x.com",
+    "cdp"
+  ],
+  "license": "MIT"
+}

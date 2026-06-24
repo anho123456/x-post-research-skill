@@ -185,18 +185,6 @@ Recommended prompt:
 Read this X/Twitter post. Inspect the text, images, replies, and external links. Tell me the main point, whether the mentioned tool can be installed or used, whether it needs an API key or payment, and give me practical next steps.
 ```
 
-## 宣传与分享
-
-如果你想介绍这个项目，可以直接使用仓库里的 [PROMOTION.md](PROMOTION.md)。里面包含：
-
-- X/Twitter 中文短帖
-- X/Twitter 中英双语帖
-- 小红书/公众号风格文案
-- GitHub 项目简介
-- 新手向标题
-
-你也可以给仓库点 Star，或把它 Fork 成自己的 Agent Skill 学习模板。
-
 ## 常见问题
 
 ### 为什么要 `--remote-allow-origins=*`？

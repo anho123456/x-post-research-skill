@@ -11,11 +11,13 @@ Use this skill to turn an X/Twitter status URL into a verified, Chinese-first re
 
 1. Extract the status id from the URL.
 2. Run `scripts/x-read-post.mjs "<url>" --json` first. It tries public endpoints and falls back to local Chrome CDP when available.
-3. Treat the main post, images, quoted post, replies, and external links as separate evidence surfaces. Do not summarize from the first text block alone when the post contains media or links.
-4. If a post mentions a tool, skill, plugin, MCP server, API, or service, inspect the external page or GitHub repository before answering whether it can be used or installed.
-5. Answer in Chinese by default. Add English only when useful for repository names, commands, tool names, or bilingual sharing.
-6. Separate verified facts from inferred guidance. Mention when a claim comes only from the post or comments.
-7. If the post cannot be read, explain which path failed: public endpoint, oEmbed, Chrome CDP, login, deleted/private post, or network access.
+3. If the agent runs inside OpenClaw and TweetClaw is installed, optionally ask the user to approve a read-only public source packet before summarizing. Use that packet for status URL, author handle, timestamp, public engagement counts, quoted or replied links, short excerpts, and claims that need verification.
+4. Do not use TweetClaw from this skill to draft, schedule, publish, or otherwise perform write-like social actions. Keep this skill responsible for reading, verification, and research notes; keep write-like actions in the user's explicit OpenClaw or TweetClaw approval flow.
+5. Treat the main post, images, quoted post, replies, and external links as separate evidence surfaces. Do not summarize from the first text block alone when the post contains media or links.
+6. If a post mentions a tool, skill, plugin, MCP server, API, or service, inspect the external page or GitHub repository before answering whether it can be used or installed.
+7. Answer in Chinese by default. Add English only when useful for repository names, commands, tool names, or bilingual sharing.
+8. Separate verified facts from inferred guidance. Mention when a claim comes only from the post or comments.
+9. If the post cannot be read, explain which path failed: public endpoint, oEmbed, Chrome CDP, login, deleted/private post, or network access.
 
 ## Chrome CDP
 

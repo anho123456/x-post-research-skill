@@ -61,6 +61,23 @@ The script tries public endpoints first, then falls back to your local Chrome De
 - 哪些信息已经核查，哪些只是帖子作者的说法
 - 新手下一步应该怎么试
 
+## 可选 TweetClaw source packet
+
+如果你的智能体运行在 OpenClaw 里，并且已经安装 TweetClaw，可以把 TweetClaw
+当成一个可选的公开 X/Twitter source packet 来源。先请求用户确认，再收集帖子
+URL、作者 handle、时间、公开互动数据、引用或回复链接、短摘录和待核查点，然
+后把这些事实交给本 skill 继续核查和总结。
+
+不要在这个 skill 里使用 TweetClaw 起草、排程或发布内容。这个仓库负责读取、
+核查和研究笔记；任何写入类动作都应该继续留在用户明确确认过的 OpenClaw /
+TweetClaw 流程里。
+
+If your agent runs inside OpenClaw with TweetClaw installed, treat TweetClaw
+as an optional source-packet collector for public X/Twitter evidence. Use it
+only after user approval, then feed the collected facts into this skill for
+verification and summary work. Do not use TweetClaw here for drafting,
+scheduling, or publishing.
+
 ## 通用安装方式
 
 核心是把 `skill/x-post-research` 这个文件夹复制到你的智能体 skills 目录。
